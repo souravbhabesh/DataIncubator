@@ -1,0 +1,79 @@
+        
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['map'],
+      // Note: you will need to get a mapsApiKey for your project.
+      // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+      'mapsApiKey': 'AIzaSyBbNtjSA6bGTYIMYreYq2tGyCfJf9dP1W8'
+    });
+    google.charts.setOnLoadCallback(drawMap);
+
+    function drawMap () {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Address');
+      data.addColumn('string', 'Location');
+      data.addColumn('string', 'Marker')
+
+      data.addRows([
+['Bronx NY, United States', 'Bronx High AQI Days: 37', 'pink'],
+['Chautauqua NY, United States', ' Chautauqua High AQI Days: 46 ', 'pink'],
+['Dutchess NY, United States', ' Dutchess High AQI Days: 30 ', 'green'],
+['Erie NY, United States', ' Erie High AQI Days: 59 ', 'pink'],
+['Herkimer NY, United States', ' Herkimer High AQI Days: 7 ', 'green'],
+['Monroe NY, United States', ' Monroe High AQI Days: 70 ', 'pink'],
+['Niagara NY, United States', ' Niagara High AQI Days: 37 ', 'pink'],
+['Onondaga NY, United States', 'Onondaga  High AQI Days: 23 ', 'green'],
+['Orange NY, United States', 'Orange  High AQI Days: 33 ', 'pink'],
+['Oswego NY, United States', 'Oswego  High AQI Days: 26 ', 'green'],
+['Putnam NY, United States', 'Putnam  High AQI Days: 39 ', 'pink'],
+['Queens NY, United States', 'Queens  High AQI Days: 45 ', 'pink'],
+['Rockland NY, United States', 'Rockland  High AQI Days: 37 ', 'pink'],
+['Saratoga NY, United States', 'Saratoga  High AQI Days: 29 ', 'green'],
+['Steuben NY, United States', 'Steuben  High AQI Days: 12 ', 'green'],
+['Tompkins NY, United States', 'Tompkins  High AQI Days: 16 ', 'green'],
+['Wayne NY, United States', ' Wayne High AQI Days: 32 ', 'pink'],
+['Westchester NY, United States', 'Westchester  High AQI Days: 51 ', 'pink'],
+['Albany NY, United States', 'Albany  High AQI Days: 95 ', 'pink'],
+['Essex NY, United States', 'Essex  High AQI Days: 80 ', 'pink'],
+['Hamilton NY, United States', 'Hamilton  High AQI Days: 77 ', 'pink'],
+['Suffolk NY, United States', 'Suffolk  High AQI Days: 74 ', 'pink'],
+['Jefferson NY, United States', 'Jefferson  High AQI Days: 219 ', 'pink'],
+['Richmond NY, United States', 'Richmond  High AQI Days: 129 ', 'pink']
+      ]);
+      var url = 'https://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/';
+
+      var options = {
+        zoomLevel: 6,
+        showTooltip: true,
+        showInfoWindow: true,
+        useMapTypeControl: true,
+        icons: {
+          blue: {
+            normal:   url + 'Map-Marker-Flag-1-Right-Azure-icon.png',
+            selected: url + 'Map-Marker-Flag-1-Right-Azure-icon.png'
+          },
+          green: {
+            normal:   url + 'Map-Marker-Flag-1-Right-Chartreuse-icon.png',
+            selected: url + 'Map-Marker-Flag-1-Right-Chartreuse-icon.png'
+          },
+          pink: {
+            normal:   url + 'Map-Marker-Flag-1-Right-Pink-icon.png',
+            selected: url + 'Map-Marker-Flag-1-Right-Pink-icon.png'
+          }
+        }
+      };
+      var map = new google.visualization.Map(document.getElementById('map_div'));
+
+      map.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <div id="map_div" style="height: 500px; width: 900px"></div>
+</body>
+</html>
+
+    
